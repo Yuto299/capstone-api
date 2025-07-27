@@ -7,5 +7,25 @@
   </head>
   <body>
     <h1>本日のUV情報</h1>
+    <form action="/" method="get">
+      <label for="lat">lat:</label>
+      <input type="text" id="lat" name="lat" />
+      <br />
+      <label for="lng">lng:</label>
+      <input type="text" id="lng" name="lng" />
+      <button type="submit">Submit</button>
+    </form>
+
+    <% if (content) {%>
+    <h2>紫外線情報</h2>
+    <ul>
+      <li>現在のUV指数：<%= uv %></li>
+      <li>現在のUV計測時刻：<%= uv_time %></li>
+      <li>本日の最大UV指数：<%= uv_max %></li>
+      <li>最大UV指数の時刻：<%= uv_max_time %></li>
+      <li>現在のオゾン量（DU）：<%= ozone %></li>
+      <li>オゾン量の観測時刻：<%= ozone_time %></li>
+    </ul>
+    <% } %>
   </body>
 </html>
